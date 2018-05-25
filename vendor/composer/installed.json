@@ -1,0 +1,1008 @@
+[
+    {
+        "name": "symfony/polyfill-ctype",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-ctype.git",
+            "reference": "9d31bef82d2e9b033f335d60b96611757f98c605"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-ctype/9d31bef82d2e9b033f335d60b96611757f98c605.zip",
+            "reference": "9d31bef82d2e9b033f335d60b96611757f98c605",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-ctype": "For best performance"
+        },
+        "time": "2018-05-17T18:32:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Ctype\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            },
+            {
+                "name": "Gert de Pagter",
+                "email": "BackEndTea@gmail.com"
+            }
+        ],
+        "description": "Symfony polyfill for ctype functions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "ctype",
+            "polyfill",
+            "portable"
+        ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "55f138b02455b1053070e9a17be7915882c459bd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/yaml/55f138b02455b1053070e9a17be7915882c459bd.zip",
+            "reference": "55f138b02455b1053070e9a17be7915882c459bd",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "symfony/polyfill-ctype": "~1.8"
+        },
+        "conflict": {
+            "symfony/console": "<3.4"
+        },
+        "require-dev": {
+            "symfony/console": "~3.4|~4.0"
+        },
+        "suggest": {
+            "symfony/console": "For validating YAML files using the lint command"
+        },
+        "time": "2018-05-07T14:51:25+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.2-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "psr/http-message",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/http-message/f6561bf28d520154e4b0ec72be95418abe6d9363.zip",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06T14:39:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "psr/http-server-handler",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-server-handler.git",
+            "reference": "ede6c504a77ebc87e7256d13df5877cbf9127104"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/http-server-handler/ede6c504a77ebc87e7256d13df5877cbf9127104.zip",
+            "reference": "ede6c504a77ebc87e7256d13df5877cbf9127104",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/http-message": "^1.0"
+        },
+        "time": "2018-01-26T14:27:09+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side request handler",
+        "keywords": [
+            "handler",
+            "http",
+            "http-interop",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response",
+            "server"
+        ]
+    },
+    {
+        "name": "psr/http-server-middleware",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-server-middleware.git",
+            "reference": "e01237126449cadfb66b60a5a818de9e9dde6bf3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/http-server-middleware/e01237126449cadfb66b60a5a818de9e9dde6bf3.zip",
+            "reference": "e01237126449cadfb66b60a5a818de9e9dde6bf3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/http-message": "^1.0",
+            "psr/http-server-handler": "^1.0"
+        },
+        "time": "2018-01-22T22:18:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side middleware",
+        "keywords": [
+            "http",
+            "http-interop",
+            "middleware",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "nikic/php-parser",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/PHP-Parser.git",
+            "reference": "3ce5e628a71b0a8a38299547ae9f881b1f420245"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/nikic/PHP-Parser/3ce5e628a71b0a8a38299547ae9f881b1f420245.zip",
+            "reference": "3ce5e628a71b0a8a38299547ae9f881b1f420245",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.5 || ^7.0"
+        },
+        "time": "2018-05-19T10:21:45+00:00",
+        "bin": [
+            "bin/php-parse"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "PhpParser\\": "lib/PhpParser"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-util",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-util.git",
+            "reference": "1a5ad95d9436cbff3296034fe9f8d586dce3fb3a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-util/1a5ad95d9436cbff3296034fe9f8d586dce3fb3a.zip",
+            "reference": "1a5ad95d9436cbff3296034fe9f8d586dce3fb3a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2018-04-26T10:06:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Util\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony utilities for portability of PHP codes",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compat",
+            "compatibility",
+            "polyfill",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-php56",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-php56.git",
+            "reference": "af98553c84912459db3f636329567809d639a8f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-php56/af98553c84912459db3f636329567809d639a8f6.zip",
+            "reference": "af98553c84912459db3f636329567809d639a8f6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/polyfill-util": "~1.0"
+        },
+        "time": "2018-04-26T10:06:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php56\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "jeremeamia/SuperClosure",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremeamia/super_closure.git",
+            "reference": "5707d5821b30b9a07acfb4d76949784aaa0e9ce9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/jeremeamia/super_closure/5707d5821b30b9a07acfb4d76949784aaa0e9ce9.zip",
+            "reference": "5707d5821b30b9a07acfb4d76949784aaa0e9ce9",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "^1.2|^2.0|^3.0|^4.0",
+            "php": ">=5.4",
+            "symfony/polyfill-php56": "^1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0"
+        },
+        "time": "2018-03-21T22:21:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "SuperClosure\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Lindblom",
+                "email": "jeremeamia@gmail.com",
+                "homepage": "https://github.com/jeremeamia",
+                "role": "Developer"
+            }
+        ],
+        "description": "Serialize Closure objects, including their context and binding",
+        "homepage": "https://github.com/jeremeamia/super_closure",
+        "keywords": [
+            "closure",
+            "function",
+            "lambda",
+            "parser",
+            "serializable",
+            "serialize",
+            "tokenizer"
+        ]
+    },
+    {
+        "name": "psr/container",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "2cc4a01788191489dc7459446ba832fa79a216a7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/container/2cc4a01788191489dc7459446ba832fa79a216a7.zip",
+            "reference": "2cc4a01788191489dc7459446ba832fa79a216a7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-06-28T15:35:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
+        "name": "php-di/invoker",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHP-DI/Invoker.git",
+            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/PHP-DI/Invoker/540c27c86f663e20fe39a24cd72fa76cdb21d41a.zip",
+            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a",
+            "shasum": ""
+        },
+        "require": {
+            "psr/container": "~1.0"
+        },
+        "require-dev": {
+            "athletic/athletic": "~0.1.8",
+            "phpunit/phpunit": "~4.5"
+        },
+        "time": "2017-03-20T19:28:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Invoker\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Generic and extensible callable invoker",
+        "homepage": "https://github.com/PHP-DI/Invoker",
+        "keywords": [
+            "callable",
+            "dependency",
+            "dependency-injection",
+            "injection",
+            "invoke",
+            "invoker"
+        ]
+    },
+    {
+        "name": "php-di/phpdoc-reader",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHP-DI/PhpDocReader.git",
+            "reference": "7d0de60b9341933c8afd172a6255cd7557601e0e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/PHP-DI/PhpDocReader/7d0de60b9341933c8afd172a6255cd7557601e0e.zip",
+            "reference": "7d0de60b9341933c8afd172a6255cd7557601e0e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6"
+        },
+        "time": "2018-02-18T17:39:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpDocReader\\": "src/PhpDocReader"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "PhpDocReader parses @var and @param values in PHP docblocks (supports namespaced class names with the same resolution rules as PHP)",
+        "keywords": [
+            "phpdoc",
+            "reflection"
+        ]
+    },
+    {
+        "name": "php-di/php-di",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHP-DI/PHP-DI.git",
+            "reference": "71a7f2ed1e728138060ea159cbb1a92dc8620bd2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/PHP-DI/PHP-DI/71a7f2ed1e728138060ea159cbb1a92dc8620bd2.zip",
+            "reference": "71a7f2ed1e728138060ea159cbb1a92dc8620bd2",
+            "shasum": ""
+        },
+        "require": {
+            "jeremeamia/superclosure": "^2.0",
+            "nikic/php-parser": "^2.0|^3.0|^4.0",
+            "php": ">=7.0.0",
+            "php-di/invoker": "^2.0",
+            "php-di/phpdoc-reader": "^2.0.1",
+            "psr/container": "^1.0"
+        },
+        "provide": {
+            "psr/container-implementation": "^1.0"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.2",
+            "friendsofphp/php-cs-fixer": "^2.4",
+            "mnapoli/phpunit-easymock": "~1.0",
+            "ocramius/proxy-manager": "~2.0.2",
+            "phpstan/phpstan": "^0.9.2",
+            "phpunit/phpunit": "~6.4"
+        },
+        "suggest": {
+            "doctrine/annotations": "Install it if you want to use annotations (version ~1.2)",
+            "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~2.0)"
+        },
+        "time": "2018-04-23T06:54:40+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "DI\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "The dependency injection container for humans",
+        "homepage": "http://php-di.org/",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interop",
+            "dependency injection",
+            "di",
+            "ioc",
+            "psr11"
+        ]
+    },
+    {
+        "name": "eclogue/hayrick",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eclogue/hayrick.git",
+            "reference": "251d8ba6e9e7f4c6b6bc31483f3e9f62e3f7ed17"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/eclogue/hayrick/251d8ba6e9e7f4c6b6bc31483f3e9f62e3f7ed17.zip",
+            "reference": "251d8ba6e9e7f4c6b6bc31483f3e9f62e3f7ed17",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0",
+            "psr/http-message": "^1.0"
+        },
+        "time": "2018-05-15T02:13:48+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Hayrick\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "eclogue/bulrush",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eclogue/bulrush.git",
+            "reference": "2cd5ac988813009c86e57b4b3474fb79dfa406c3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/eclogue/bulrush/2cd5ac988813009c86e57b4b3474fb79dfa406c3.zip",
+            "reference": "2cd5ac988813009c86e57b4b3474fb79dfa406c3",
+            "shasum": ""
+        },
+        "time": "2018-01-20T09:48:00+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Bulrush\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "mulberry10",
+                "email": "mulberry10th@gmail.com"
+            }
+        ]
+    },
+    {
+        "name": "eclogue/courser",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eclogue/courser.git",
+            "reference": "6c0867f74a6a966be583d23ba58926d0a1a4829e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/eclogue/courser/zipball/6c0867f74a6a966be583d23ba58926d0a1a4829e",
+            "reference": "6c0867f74a6a966be583d23ba58926d0a1a4829e",
+            "shasum": ""
+        },
+        "require": {
+            "eclogue/bulrush": "dev-master",
+            "eclogue/hayrick": "dev-master",
+            "php": ">=7.0.0",
+            "php-di/php-di": "dev-master",
+            "psr/http-message": "^1.0",
+            "psr/http-server-handler": "^1.0@dev",
+            "psr/http-server-middleware": "^1.0"
+        },
+        "replace": {
+            "courser/http": "self.version"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "^2.0",
+            "phpunit/phpunit": "^6.1",
+            "squizlabs/php_codesniffer": "^3.0"
+        },
+        "time": "2018-04-16T07:17:14+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Courser\\": "src/"
+            }
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "Tests\\": "tests/"
+            }
+        },
+        "scripts": {
+            "phpcs": [
+                "php vendor/bin/phpcs"
+            ],
+            "test": [
+                "php vendor/bin/phpunit --coverage-text"
+            ],
+            "cgi-server": [
+                "php -t example -S 127.0.0.1:8179"
+            ],
+            "swoole-server": [
+                "php example/swoole.php"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "bugbear",
+                "email": "mulberry10th@gmail.com",
+                "homepage": "https://github.com/eclogue/courser"
+            }
+        ],
+        "description": "light and faster php rest api lib",
+        "support": {
+            "source": "https://github.com/eclogue/courser/tree/master",
+            "issues": "https://github.com/eclogue/courser/issues"
+        }
+    },
+    {
+        "name": "symfony/polyfill-mbstring",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "3296adf6a6454a050679cde90f95350ad604b171"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-mbstring/3296adf6a6454a050679cde90f95350ad604b171.zip",
+            "reference": "3296adf6a6454a050679cde90f95350ad604b171",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2018-04-26T10:06:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/console",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "04173e19f71445fa9eada6db05f242b57c5b849b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/console/04173e19f71445fa9eada6db05f242b57c5b849b.zip",
+            "reference": "04173e19f71445fa9eada6db05f242b57c5b849b",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/dependency-injection": "<3.4",
+            "symfony/process": "<3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~3.4|~4.0",
+            "symfony/dependency-injection": "~3.4|~4.0",
+            "symfony/event-dispatcher": "~3.4|~4.0",
+            "symfony/lock": "~3.4|~4.0",
+            "symfony/process": "~3.4|~4.0"
+        },
+        "suggest": {
+            "psr/log-implementation": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/lock": "",
+            "symfony/process": ""
+        },
+        "time": "2018-05-16T14:42:13+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.2-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "eclogue/lily",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eclogue/Lily.git",
+            "reference": "fcb3bd9f505ff49049f9515fe8f4f71ce4d753fc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/eclogue/Lily/fcb3bd9f505ff49049f9515fe8f4f71ce4d753fc.zip",
+            "reference": "fcb3bd9f505ff49049f9515fe8f4f71ce4d753fc",
+            "shasum": ""
+        },
+        "require": {
+            "symfony/console": "^4.1@dev",
+            "symfony/yaml": "^4.1@dev"
+        },
+        "time": "2018-04-19T07:01:30+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Lily\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/"
+    }
+]
