@@ -34,7 +34,7 @@ class Catheter extends NodeVisitorAbstract
 
 
         if ($node instanceof Node\Expr\MethodCall) {
-            if ($node->name === $this->bodyMethodName) {
+            if ((string)$node->name == $this->bodyMethodName) {
                 $name = $node->args[0]->value->value;
                 $payload = [
                     $name => [
@@ -61,7 +61,7 @@ class Catheter extends NodeVisitorAbstract
                     ];
                 }
 
-            } elseif ($node->name === $this->queryMethodName) {
+            } elseif ((string)$node->name === $this->queryMethodName) {
                 $name = $node->args[0]->value->value;
                 $this->params['query'][] = [
                     'in' => 'query',
@@ -74,6 +74,5 @@ class Catheter extends NodeVisitorAbstract
         }
 
     }
-
 
 }

@@ -86,4 +86,51 @@ class Straw
         $documents = json_encode($documents);
         file_put_contents($this->structure['output'], $documents);
     }
+
+
+    public function appendRouter($file, array $router)
+    {
+        $file = $this->structure['router'] . '/' . $file;
+        if (!file_exists($file)) {
+            $data = Yaml::dump($router, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+            file_put_contents($file, $data, FILE_APPEND | LOCK_EX);
+
+            return true;
+        }
+
+        $doc = Yaml::parseFile($file);
+        foreach ($router as $method => $route) {
+            if (isset($doc[$method])) {
+                continue;
+            }
+
+            $data = [$method => $route];
+            $data = Yaml::dump($data, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+
+            file_put_contents($file, $data, FILE_APPEND | LOCK_EX);
+        }
+
+        return true;
+    }
+
+    public function addDefinition($file, $defition)
+    {
+        $file = $this->structure['definition'] . '/' . $file;
+        $data = Yaml::dump($defition, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+        file_put_contents($file, $data);
+    }
+
+    public function genRouterIndices($router)
+    {
+        $file = $this->structure['router'] . '/index.yaml';
+        $data = Yaml::dump($router, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+        file_put_contents($file, $data);
+    }
+
+    public function genDefinitionIndeices($definition)
+    {
+        $file = $this->structure['definition'] . '/index.yaml';
+        $data = Yaml::dump($definition, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+        file_put_contents($file, $data);
+    }
 }

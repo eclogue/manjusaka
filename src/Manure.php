@@ -10,9 +10,11 @@
 namespace Eclogue\Manjusaka;
 
 use Courser\App;
+use GuzzleHttp\Tests\Psr7\Str;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter;
 use PhpParser\NodeTraverser;
+use Symfony\Component\Yaml\Yaml;
 
 class Manure
 {
@@ -20,19 +22,30 @@ class Manure
 
     public $structure;
 
-    public function __construct(App $app)
+    protected $root;
+
+    protected $entrance;
+
+    protected $modelPath;
+
+    public function __construct(App $app, string $root, string $entrance)
     {
         $this->app = $app;
+        $this->root = $root;
+        $this->entrance = $entrance;
+        $this->structure = new Straw($this->entrance, $this->root);
+
     }
 
 
     /**
      * @throws \ReflectionException
      */
-    public function run()
+    public function dump()
     {
-
         $routes = $this->app->layer;
+        $indices = [];
+
         foreach ($routes as $key => $layers) {
             $doc = [];
             if (is_array($layers)) {
@@ -64,6 +77,25 @@ class Manure
                         $start = $reflection->getStartLine();
                         $end = $reflection->getEndLine();
                         $file = $reflection->getFileName();
+                        $comment = $reflection->getDocComment();
+                        $pattern = '#([\/|\*]+)#';
+                        $comment = preg_replace($pattern, '', $comment);
+                        $comment = explode(PHP_EOL, $comment);
+                        $description = [];
+                        foreach ($comment as $item) {
+                            $item = preg_replace('#^[\s]+#', '', $item);
+                            if ($item) {
+                                preg_match('#^@#', $item, $match);
+
+                                if (!empty($match)) {
+                                    continue;
+                                }
+
+                                $description[] = $item;
+                            }
+                        }
+
+
                         $reader = new \SplFileObject($file, 'r');
                         $reader->seek($start);
                         $code = '<?php' . PHP_EOL;
@@ -92,21 +124,20 @@ class Manure
                         if (!empty($params['query'])) {
                             $doc[$method]['parameters'][] = $params['query'];
                         }
-
                     }
 
                     $main = [
-                        'tags' => '',
-                        'description' => '',
+                        'tags' => [],
+                        "description" => implode('|', $description),
                         'security' => [],
                         'responses' => [
                             '200' => [
                                 'description' => '',
-                                "schema" => [
-                                    "type" => "object",
-                                    "properties" => [
-                                        "message" => [
-                                            "type" => 'string',
+                                'schema' => [
+                                    'type' => 'object',
+                                    'properties' => [
+                                        'message' => [
+                                            'type' => 'string',
                                             'default' => 'ok'
                                         ],
                                         'data' => [
@@ -120,12 +151,64 @@ class Manure
                     $doc[$method] = array_merge($doc[$method], $main);
 
                     $path = $route->route;
-                    $yaml = preg_replace('#[\:|\{|}+]#', '', $path);
+//                    $yaml = preg_replace('#([\:|\{|}]+)#', '', $path);
+                    $path = preg_replace('#:([a-zA-Z0-9]+)#', '{$1}', $path);
+                    $yaml = preg_replace('#([{|}]+)#', '', $path);
                     $yaml = trim($yaml, '\/');
                     $yaml = str_replace('/', '_', $yaml);
-                    echo $yaml;
+                    $yaml = $yaml . '.yaml';
+                    $indices[$path] = [
+                        '$ref' => $yaml
+                    ];
+                    $this->structure->appendRouter($yaml, $doc);
+//                    file_put_contents($yaml, $res);
                 }
             }
         }
+
+        $this->structure->genRouterIndices($indices);
+    }
+
+    public function dumpModel(string $path)
+    {
+        $files = glob($path . '/*.php');
+        $indices = [];
+        foreach($files as $key => $file) {
+            $class = require ($file);
+            $name = basename($file, '.php');
+            $yaml = $name . '.yaml';
+            $indices[$name] = [
+                '$ref' => $yaml
+            ];
+            $class .= '\\' . $name;
+            $model = new $class;
+            $fields = $model->fields;
+            if (empty($fields)) {
+                continue;
+            }
+
+            $definition = [
+                'description' => 'Model of ' . $name,
+                'type' => 'object',
+                'properties' => [],
+            ];
+            $properties = [];
+
+            foreach ($fields as $field => $schema) {
+                $type = $schema['type'] === 'int' ? 'integer' : 'string';
+                $properties[$field] = [
+                    'type' => $type,
+                    'description' => $schema['comment'] ?? '',
+                ];
+                if (isset($schema['default'])) {
+                    $properties[$field]['default'] = [$schema['default']];
+                }
+            }
+
+            $definition['properties'] = $properties;
+            $this->structure->addDefinition($yaml, $definition);
+        }
+
+        $this->structure->genDefinitionIndeices($indices);
     }
 }
