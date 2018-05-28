@@ -74,6 +74,7 @@ class Manure
                         } else {
                             $reflection = new \ReflectionFunction($callable);
                         }
+
                         $start = $reflection->getStartLine();
                         $end = $reflection->getEndLine();
                         $file = $reflection->getFileName();
@@ -130,28 +131,33 @@ class Manure
                         'tags' => [],
                         "description" => implode('|', $description),
                         'security' => [],
-                        'responses' => [
-                            '200' => [
-                                'description' => '',
-                                'schema' => [
-                                    'type' => 'object',
-                                    'properties' => [
-                                        'message' => [
-                                            'type' => 'string',
-                                            'default' => 'ok'
-                                        ],
-                                        'data' => [
-                                            'type' => 'object'
-                                        ],
-                                    ],
-                                ],
-                            ],
+                    ];
+
+                    $response = $catheter->response;
+                    $responses = [
+                        'default' => [
+                            'description' => 'service error',
+                            'schema' => [
+                                '$ref' => '#/definitions/Error'
+                            ]
                         ],
                     ];
+                    foreach ($response as $code => $schema) {
+                        $code = (string) $code;
+                        $responses[$code] = [
+                            'description' => 'response of ' . $code,
+                            'schema' => [
+                                'type' => 'object',
+                                'properties' => $schema,
+                            ],
+                        ];
+                    }
+
+
+                    $main['responses'] = $responses;
                     $doc[$method] = array_merge($doc[$method], $main);
 
                     $path = $route->route;
-//                    $yaml = preg_replace('#([\:|\{|}]+)#', '', $path);
                     $path = preg_replace('#:([a-zA-Z0-9]+)#', '{$1}', $path);
                     $yaml = preg_replace('#([{|}]+)#', '', $path);
                     $yaml = trim($yaml, '\/');
@@ -161,7 +167,6 @@ class Manure
                         '$ref' => $yaml
                     ];
                     $this->structure->appendRouter($yaml, $doc);
-//                    file_put_contents($yaml, $res);
                 }
             }
         }
@@ -173,8 +178,8 @@ class Manure
     {
         $files = glob($path . '/*.php');
         $indices = [];
-        foreach($files as $key => $file) {
-            $class = require ($file);
+        foreach ($files as $key => $file) {
+            $class = require($file);
             $name = basename($file, '.php');
             $yaml = $name . '.yaml';
             $indices[$name] = [

@@ -116,6 +116,32 @@ class Straw
     public function addDefinition($file, $defition)
     {
         $file = $this->structure['definition'] . '/' . $file;
+        if (!file_exists($file)) {
+            $data = Yaml::dump($defition, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
+            file_put_contents($file, $data);
+
+            return true;
+        }
+
+        $doc = Yaml::parseFile($file);
+        $origin = $doc['properties'];
+        $properties = $defition['properties'];
+        $fields = $origin;
+        foreach ($properties as $key => $field) {
+            if (isset($origin[$key]) && $origin[$key] == $field) {
+                continue;
+            }
+
+            $fields[$key] = $field;
+        }
+
+        foreach ($origin as $key => $value) {
+            if (!isset($properties[$key]) && isset($fields[$key])) {
+                unset($fields[$key]);
+            }
+        }
+
+        $defition['properties'] = $fields;
         $data = Yaml::dump($defition, 10, 2, Yaml::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
         file_put_contents($file, $data);
     }
